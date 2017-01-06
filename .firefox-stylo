@@ -1,0 +1,12 @@
+# include the common mozconfig
+#. ./mozconfig-common
+mk_add_options MOZ_MAKE_FLAGS="-j4"
+ac_add_options --enable-optimize --disable-debug
+
+# Automatically download and use compiled C++ components:
+ac_add_options --enable-artifact-builds
+
+# Build Firefox
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-firefox-stylo
+mk_add_options MOZ_STYLO=1
+ac_add_options --enable-application=browser

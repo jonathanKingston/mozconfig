@@ -1,0 +1,24 @@
+# include the common mozconfig
+#. ~/mozilla/mozconfigs/mozconfig-common
+
+mk_add_options MOZ_MAKE_FLAGS="-j4"
+ac_add_options --disable-optimize
+# --disable-debug
+
+# Automatically download and use compiled C++ components:
+#ac_add_options --enable-artifact-builds
+
+#mk_add_options MOZ_MAKE_FLAGS=-Wreorder
+#mk_add_options MOZ_MAKE_FLAGS=-Wwarnings-as-errors
+
+#gdwarif ?
+ac_add_options --enable-debug
+#ac_add_options --enable-debug-symbols
+ac_add_options --disable-install-strip
+
+# Build Firefox aurora
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-devedition
+ac_add_options --enable-application=browser
+ac_add_options --with-branding=browser/branding/aurora
+# Treat warnings as errors in directories with FAIL_ON_WARNINGS.
+#ac_add_options --enable-warnings-as-errors

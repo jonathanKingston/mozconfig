@@ -1,0 +1,3 @@
+# common options here, such as making an optimized release build
+mk_add_options MOZ_MAKE_FLAGS="-j4"
+ac_add_options --enable-optimize --disable-debug

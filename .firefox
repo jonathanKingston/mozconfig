@@ -1,0 +1,9 @@
+# include the common mozconfig
+#. ./mozconfig-common
+
+# Automatically download and use compiled C++ components:
+#ac_add_options --enable-artifact-builds
+
+# Build Firefox
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-firefox
+ac_add_options --enable-application=browser
